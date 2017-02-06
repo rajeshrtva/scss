@@ -1,0 +1,384 @@
+
+
+
+
+@include viewport(desk) {
+    .main-nav {
+        float: right;
+
+        color: $nav-color;
+    }
+
+    // temporary class for html
+    .main-nav > ul#menu-top-first {
+        display: none;
+    }
+    //
+    .main-nav ul.menu {
+        display: table;
+        width: 100%;
+        padding: 0;
+        margin: 25px 0 0;
+        @include transition-ease(.5s);
+    }
+    .main-nav ul.menu > li {
+        position: relative;
+
+        display: inline-block;
+        padding: 4px 15px;
+        margin-right: 0;
+
+        cursor: default;
+        text-align: center;
+    }
+    .main-nav ul.menu > li:first-child {
+        padding-left: 0;
+    }
+    .main-nav ul.menu > li:last-child {
+        padding-right: 0;
+
+        background: none;
+    }
+    .main-nav ul.menu > li > a {
+        display: block;
+        padding: 0;
+
+        font-family: $Montserrat-light;
+        font-size: 16px;
+
+        text-decoration: none;
+
+        color: $nav-color;
+    }
+    .main-nav ul.menu > li:hover > a {
+        color: $accent;
+    }
+    .main-nav ul.menu .current-page-ancestor > a,
+    .main-nav ul.menu .current-menu-ancestor > a,
+    .main-nav ul.menu .current_page_ancestor > a,
+    .main-nav ul.menu .current-menu-item > a,
+    .main-nav ul.menu .current_page_parent > a,
+    .main-nav ul.menu .current-page-parent > a {
+        color: #e6732b;
+    }
+    .main-nav ul.menu ul .current-page-ancestor > a,
+    .main-nav ul.menu ul .current-menu-ancestor > a,
+    .main-nav ul.menu ul .current_page_ancestor > a,
+    .main-nav ul.menu ul .current-menu-item > a,
+    .main-nav ul.menu ul .current_page_parent > a,
+    .main-nav ul.menu ul .current-page-parent > a {
+        color: $white;
+        background: #555;
+    }
+
+    footer ul.menu .current-page-ancestor > a,
+    footer ul.menu .current-menu-ancestor > a,
+    footer ul.menu .current_page_ancestor > a,
+    footer ul.menu .current-menu-item > a,
+    footer ul.menu .current_page_parent > a,
+    footer ul.menu .current-page-parent > a {
+        color: #e6732b;
+    }
+    footer ul.menu li.current-page-ancestor > a,
+    footer ul.menu li.current-menu-ancestor > a,
+    footer ul.menu li.current_page_ancestor > a,
+    footer ul.menu li.current-menu-item > a,
+    footer ul.menu li.current_page_parent > a,
+    footer ul.menu li.current-page-parent > a {
+        color: #e6732b;
+    }
+
+    .subnav ul.menu .current-page-ancestor > a,
+    .subnav ul.menu .current-menu-ancestor > a,
+    .subnav ul.menu .current_page_ancestor > a,
+    .subnav ul.menu .current-menu-item > a,
+    .subnav ul.menu .current_page_parent > a,
+    .subnav ul.menu .current-page-parent > a {
+        color: #e6732b;
+    }
+    .subnav ul.menu li.current-page-ancestor > a,
+    .subnav ul.menu li.current-menu-ancestor > a,
+    .subnav ul.menu li.current_page_ancestor > a,
+    .subnav ul.menu li.current-menu-item > a,
+    .subnav ul.menu li.current_page_parent > a,
+    .subnav ul.menu li.current-page-parent > a {
+        color: #e6732b;
+    }
+
+
+
+
+
+    .main-nav ul.menu > li:hover > a.active {
+        color: #fff;
+    }
+    .main-nav ul.menu > li.submenu i:after {
+        position: absolute;
+        top: 14px;
+        right: 0;
+        z-index: 10;
+
+        width: 0;
+        height: 0;
+
+        content: "";
+
+        border-top: 6px solid $nav-color;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+    }
+    .main-nav ul.menu li:hover > ul {
+        visibility: visible;
+
+        opacity: 1;
+    }
+    .main-nav ul.menu ul {
+        position: absolute;
+        z-index: 1000;
+
+        visibility: hidden;
+        width: 230px;
+        padding: 10px 0 0 0;
+        margin: 0;
+
+        -webkit-transition: all ease .2s;
+                transition: all ease .2s;
+        text-align: left;
+
+        opacity: 0;
+    }
+    .main-nav ul.menu ul li {
+        position: relative;
+
+        display: block;
+        padding: 0;
+        margin: 0;
+
+        background: #bf3938;
+    }
+
+    .main-nav ul.menu ul > li.submenu i:after {
+        position: absolute;
+        top: 14px;
+        right: 0;
+        z-index: 10;
+
+        width: 0;
+        height: 0;
+
+        content: "";
+
+        border-top: 6px solid $white;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+
+        @include rotate(-90deg);
+    }
+
+    .main-nav ul.menu ul li a {
+        display: block;
+        padding: 6px 10px;
+
+        text-align: left;
+        text-decoration: none;
+
+        color: #fff;
+        border-bottom: 1px solid #ccc;
+        border-radius: none;
+        background: #f7931e;
+    }
+    .main-nav ul.menu ul li a:hover {
+        color: #fff;
+        background: #555;
+    }
+    .main-nav ul.menu ul ul {
+        position: absolute;
+        top: 0;
+        right: -300px;
+
+        visibility: hidden;
+        width: 300px;
+        padding: 0;
+        margin: 0;
+
+        -webkit-transition: all ease .2s;
+                transition: all ease .2s;
+        text-align: left;
+
+        opacity: 0;
+        background: #fff;
+        background: #26aaef;
+    }
+    .mob-btn {
+        display: none;
+    }
+    .main-nav ul.menu ul ul ul {width: 230px;right: -230px;}
+}
+
+@include viewport(lap-max) {
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        z-index: 99999;
+
+        display: block;
+        display: block;
+        width: 250px;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-y: scroll;
+
+        list-style: none;
+
+        background: #ed5200;
+
+        @include transition-ease(.3s);
+    }
+    .main-nav ul {
+        padding: 0;
+        margin: 0 0 0 0;
+    }
+    .main-nav ul li {
+        position: relative;
+
+        display: block;
+
+        list-style: none;
+
+        color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+    .main-nav ul li a {
+        display: block;
+        padding: 7px 10px;
+
+        font-family: $Montserrat-light;
+
+        color: #fff;
+
+        @include transition-ease(.5s);
+    }
+    .main-nav ul li a:hover {
+        text-decoration: none;
+
+        background: #555;
+    }
+    .main-nav li ul {
+        display: none;
+        overflow: hidden;
+    }
+    .main-nav li.open > ul {
+        display: list-item;
+        padding: 0;
+        margin: 0;
+
+        @include transition-ease(.3s);
+    }
+    .main-nav li li {
+        position: relative;
+
+        display: block;
+
+        background: #ed5200;
+    }
+    .main-nav li li:last-child {
+        border-bottom: none;
+    }
+    .main-nav li li a {
+        display: block;
+        padding-left: 20px;
+
+        font-size: 13px;
+    }
+    .main-nav ul li.submenu i {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 43px;
+        height: 40px;
+
+        cursor: pointer;
+    }
+    .main-nav ul li.submenu i:after {
+        position: absolute;
+        top: 16px;
+        right: 10px;
+        z-index: 10;
+
+        width: 0;
+        height: 0;
+
+        content: "";
+
+        border-top: 6px solid #fff;
+        border-right: 3px solid transparent;
+        border-left: 3px solid transparent;
+    }
+    .mob-btn {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        z-index: 999;
+
+        display: block;
+        float: right;
+        padding: 0 5px 5px 5px;
+        margin: 0 0 0 0;
+
+        text-transform: uppercase;
+
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .mob-btn .icon-bar {
+        position: relative;
+
+        display: block;
+        width: 28px;
+        height: 3px;
+        margin-bottom: 4px;
+
+        border-radius: 1px;
+        background: #003d70;
+
+        @include transition-ease(.3s);
+    }
+    .mob-btn .icon-bar:last-child {
+        margin-bottom: 0;
+    }
+    .open .main-nav {
+        right: 0;
+    }
+    .open .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1001;
+
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, .5);
+    }
+    .menu {
+        top: 100px;
+
+        overflow-x: scroll;
+    }
+}
+
+@include viewport(tab-min) {
+    .mob-btn {
+        top: 9px;
+    }
+}
+
+@include viewport(mob) {
+    .mob-btn {
+        top: -25px;
+    }
+}
